@@ -1,3 +1,4 @@
+using CapitalCreative.API.Models.Local;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
