@@ -7,4 +7,9 @@
         public string? Description { get; set; }
         public double Price { get; set; }
     }
+
+    public class UpdateProductRequest : ProductRequest
+    {
+        public int Id { get; set; }
+    }
 }
