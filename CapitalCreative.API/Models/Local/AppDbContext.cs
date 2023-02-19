@@ -10,5 +10,6 @@ namespace CapitalCreative.API.Models.Local
         }
 
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

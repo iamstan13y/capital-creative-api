@@ -21,6 +21,8 @@ namespace CapitalCreative.API.Controllers
                 Name = request.Name
             });
 
+            _unitOfWork.SaveChanges();
+            
             return Ok(result);
         }
 
@@ -45,6 +47,8 @@ namespace CapitalCreative.API.Controllers
                 Name = request.Name
             });
 
+            _unitOfWork.SaveChanges();
+            
             return Ok(result);
         }
     }
