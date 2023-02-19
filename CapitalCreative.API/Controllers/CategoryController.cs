@@ -1,7 +1,6 @@
 ﻿using CapitalCreative.API.Models.Data;
 using CapitalCreative.API.Models.Local;
 using CapitalCreative.API.Models.Repository.IRepository;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CapitalCreative.API.Controllers
@@ -10,14 +9,14 @@ namespace CapitalCreative.API.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly ICategoryRepository _CategoryRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryController(ICategoryRepository categoryRepository) => _CategoryRepository = categoryRepository;
-
+        public CategoryController(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
+        
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] CategoryRequest request)
         {
-            var result = await _CategoryRepository.AddAsync(new Category
+            var result = await _unitOfWork.Category.AddAsync(new Category
             {
                 Name = request.Name
             });
@@ -26,12 +25,12 @@ namespace CapitalCreative.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get() => Ok(await _CategoryRepository.GetAllAsync());
+        public async Task<IActionResult> Get() => Ok(await _unitOfWork.Category.GetAllAsync());
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var result = await _CategoryRepository.FindAsync(id);
+            var result = await _unitOfWork.Category.FindAsync(id);
             if (!result.Success) return NotFound(result);
 
             return Ok(result);
@@ -40,7 +39,7 @@ namespace CapitalCreative.API.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(UpdateCategoryRequest request)
         {
-            var result = await _CategoryRepository.UpdateAsync(new Category
+            var result = await _unitOfWork.Category.UpdateAsync(new Category
             {
                 Id = request.Id,
                 Name = request.Name
