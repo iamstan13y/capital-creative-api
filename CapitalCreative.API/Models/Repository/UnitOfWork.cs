@@ -7,11 +7,11 @@ namespace CapitalCreative.API.Models.Repository
     {
         private readonly AppDbContext _context;
 
-        public ISubscriptionRepository Subscription { get; private set; }
+       // public ISubscriptionRepository Subscription { get; private set; }
 
         public UnitOfWork(AppDbContext context)
         {
-            Role = new RoleRepository(context);
+         //   Role = new RoleRepository(context);
             _context = context;
         }
 
