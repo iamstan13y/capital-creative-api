@@ -2,7 +2,7 @@
 {
     public interface IUnitOfWork
     {
-        //ISubscriptionRepository Subscription { get; }
+        ICategoryRepository Category { get; }
         void SaveChanges();
     }
 }
