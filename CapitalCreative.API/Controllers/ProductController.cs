@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CapitalCreative.API.Models.Data;
+using CapitalCreative.API.Models.Local;
+using CapitalCreative.API.Models.Repository.IRepository;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CapitalCreative.API.Controllers
 {
@@ -6,5 +9,24 @@ namespace CapitalCreative.API.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private readonly IUnitOfWork _unitOfWork;
+
+        public ProductController(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
+
+        [HttpPost]
+        public async Task<IActionResult> Add([FromBody] ProductRequest request)
+        {
+            var result = await _unitOfWork.Product.AddAsync(new Product
+            {
+                CategoryId = request.CategoryId,
+                Name = request.Name,
+                Description = request.Description,
+                Price = request.Price
+            });
+
+            _unitOfWork.SaveChanges();
+
+            return Ok(result);
+        }
     }
 }
