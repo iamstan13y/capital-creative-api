@@ -8,10 +8,12 @@ namespace CapitalCreative.API.Models.Repository
         private readonly AppDbContext _context;
 
         public ICategoryRepository Category { get; private set; }
+        public IProductRepository Product { get; private set; }
 
         public UnitOfWork(AppDbContext context)
         {
             Category = new CategoryRepository(context);
+            Product = new ProductRepository(context);
             _context = context;
         }
 
