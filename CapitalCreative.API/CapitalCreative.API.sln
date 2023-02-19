@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapitalCreative.API", "CapitalCreative.API.csproj", "{04934ED1-DFD3-492C-8FA0-67062A49B09E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapitalCreative.API", "CapitalCreative.API\CapitalCreative.API.csproj", "{D69FA5A8-660D-466E-97BD-1DDB86914E65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{04934ED1-DFD3-492C-8FA0-67062A49B09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04934ED1-DFD3-492C-8FA0-67062A49B09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04934ED1-DFD3-492C-8FA0-67062A49B09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04934ED1-DFD3-492C-8FA0-67062A49B09E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D69FA5A8-660D-466E-97BD-1DDB86914E65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D69FA5A8-660D-466E-97BD-1DDB86914E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D69FA5A8-660D-466E-97BD-1DDB86914E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D69FA5A8-660D-466E-97BD-1DDB86914E65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3D3C7667-1975-4E5A-8D55-CE575834A3A1}
+		SolutionGuid = {F6D2F55A-3EE6-48AB-BC93-B2F47D20A069}
 	EndGlobalSection
 EndGlobal
