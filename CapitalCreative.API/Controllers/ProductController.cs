@@ -40,5 +40,22 @@ namespace CapitalCreative.API.Controllers
 
             return Ok(result);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateProductRequest request)
+        {
+            var result = await _unitOfWork.Product.UpdateAsync(new Product
+            {
+                Id = request.Id,
+                Name = request.Name,
+                CategoryId =  request.CategoryId,
+                Description = request.Description,
+                Price = request.Price
+            });
+
+            _unitOfWork.SaveChanges();
+
+            return Ok(result);
+        }
     }
 }
