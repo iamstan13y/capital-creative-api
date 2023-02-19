@@ -32,6 +32,13 @@ namespace CapitalCreative.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get() => Ok(await _unitOfWork.Product.GetAllAsync());
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var result = await _unitOfWork.Product.FindAsync(id);
+            if (!result.Success) return NotFound(result);
 
+            return Ok(result);
+        }
     }
 }
