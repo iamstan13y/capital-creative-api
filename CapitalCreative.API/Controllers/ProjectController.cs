@@ -40,5 +40,23 @@ namespace CapitalCreative.API.Controllers
 
             return Ok(result);
         }
+
+
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateProjectRequest request)
+        {
+            var result = await _unitOfWork.Project.UpdateAsync(new Project
+            {
+                Id = request.Id,
+                Description = request.Description,
+                Date = request.Date,
+                Location = request.Location,
+                Title = request.Title
+            });
+
+            _unitOfWork.SaveChanges();
+
+            return Ok(result);
+        }
     }
 }
