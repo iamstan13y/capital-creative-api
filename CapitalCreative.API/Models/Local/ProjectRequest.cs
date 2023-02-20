@@ -7,4 +7,9 @@
         public string? Description { get; set; }
         public DateTime Date { get; set; }
     }
+
+    public class UpdateProjectRequest : ProjectRequest
+    {
+        public int Id { get; set; }
+    }
 }
