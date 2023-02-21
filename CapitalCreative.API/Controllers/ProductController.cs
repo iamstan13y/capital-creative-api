@@ -48,7 +48,7 @@ namespace CapitalCreative.API.Controllers
             {
                 Id = request.Id,
                 Name = request.Name,
-                CategoryId =  request.CategoryId,
+                CategoryId = request.CategoryId,
                 Description = request.Description,
                 Price = request.Price
             });
