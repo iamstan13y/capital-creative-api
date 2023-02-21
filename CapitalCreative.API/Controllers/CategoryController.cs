@@ -12,7 +12,7 @@ namespace CapitalCreative.API.Controllers
         private readonly IUnitOfWork _unitOfWork;
 
         public CategoryController(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
-        
+
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] CategoryRequest request)
         {
@@ -22,7 +22,7 @@ namespace CapitalCreative.API.Controllers
             });
 
             _unitOfWork.SaveChanges();
-            
+
             return Ok(result);
         }
 
@@ -48,7 +48,7 @@ namespace CapitalCreative.API.Controllers
             });
 
             _unitOfWork.SaveChanges();
-            
+
             return Ok(result);
         }
     }
