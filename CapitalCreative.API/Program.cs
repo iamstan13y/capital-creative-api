@@ -1,6 +1,6 @@
 using CapitalCreative.API.Models.Local;
-using CapitalCreative.API.Models.Repository.IRepository;
 using CapitalCreative.API.Models.Repository;
+using CapitalCreative.API.Models.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
