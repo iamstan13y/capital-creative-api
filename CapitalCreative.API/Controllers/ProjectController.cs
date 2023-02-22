@@ -19,9 +19,11 @@ namespace CapitalCreative.API.Controllers
             var result = await _unitOfWork.Project.AddAsync(new Project
             {
                 Title = request.Title,
-                Description = request.Description,
-                Location = request.Location,
-                Date = request.Date
+                ShortDescription = request.ShortDescription,
+                DetailedDescription = request.DetailedDescription,
+                DateCommissioned = request.DateCommissioned,
+                ImageUrl = request.ImageUrl,
+                Location = request.Location
             });
 
             _unitOfWork.SaveChanges();
@@ -48,10 +50,12 @@ namespace CapitalCreative.API.Controllers
             var result = await _unitOfWork.Project.UpdateAsync(new Project
             {
                 Id = request.Id,
-                Description = request.Description,
-                Date = request.Date,
+                Title = request.Title,
+                ShortDescription = request.ShortDescription,
                 Location = request.Location,
-                Title = request.Title
+                DateCommissioned = request.DateCommissioned,
+                DetailedDescription = request.DetailedDescription,
+                ImageUrl = request.ImageUrl
             });
 
             _unitOfWork.SaveChanges();
