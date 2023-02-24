@@ -1,5 +1,6 @@
 ﻿using CapitalCreative.API.Models.Local;
 using CapitalCreative.API.Models.Repository.IRepository;
+using CapitalCreative.API.Services.IServices;
 
 namespace CapitalCreative.API.Models.Repository
 {
@@ -12,12 +13,12 @@ namespace CapitalCreative.API.Models.Repository
         public IProjectRepository Project { get; private set; }
         public IContactRepository Contact { get; private set; }
 
-        public UnitOfWork(AppDbContext context)
+        public UnitOfWork(AppDbContext context, IEmailService emailService, IConfiguration configuration)
         {
             Category = new CategoryRepository(context);
             Product = new ProductRepository(context);
             Project = new ProjectRepository(context);
-            Contact = new ContactRepository(context);
+            Contact = new ContactRepository(context, emailService, configuration);
             _context = context;
         }
 
