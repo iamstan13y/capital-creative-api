@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CapitalCreative.API.Models.Repository.IRepository;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CapitalCreative.API.Controllers
 {
@@ -6,5 +7,14 @@ namespace CapitalCreative.API.Controllers
     [ApiController]
     public class QuoteController : ControllerBase
     {
+        private readonly IUnitOfWork _unitOfWork;
+
+        public QuoteController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get() => Ok(await _unitOfWork.Quote.GetAllAsync());
     }
 }
