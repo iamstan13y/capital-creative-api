@@ -13,5 +13,6 @@ namespace CapitalCreative.API.Models.Local
         public DbSet<Product> Products { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Quote> Quotes { get; set; }
     }
 }
