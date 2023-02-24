@@ -12,6 +12,7 @@ namespace CapitalCreative.API.Models.Repository
         public IProductRepository Product { get; private set; }
         public IProjectRepository Project { get; private set; }
         public IContactRepository Contact { get; private set; }
+        public IQuoteRepository Quote { get; private set; }
 
         public UnitOfWork(AppDbContext context, IEmailService emailService, IConfiguration configuration)
         {
@@ -19,6 +20,7 @@ namespace CapitalCreative.API.Models.Repository
             Product = new ProductRepository(context);
             Project = new ProjectRepository(context);
             Contact = new ContactRepository(context, emailService, configuration);
+            Quote = new QuoteRepository(context);
             _context = context;
         }
 
