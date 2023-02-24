@@ -124,6 +124,55 @@ namespace CapitalCreative.API.Migrations
                     b.ToTable("Projects");
                 });
 
+            modelBuilder.Entity("CapitalCreative.API.Models.Data.Quote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Appliances")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Budget")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ChoosingTheRightSystem")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HowDidYouHearAboutUs")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherInformation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoofPitchedOrFlat")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoofType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SystemRequirements")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Quotes");
+                });
+
             modelBuilder.Entity("CapitalCreative.API.Models.Data.Product", b =>
                 {
                     b.HasOne("CapitalCreative.API.Models.Data.Category", "Category")
