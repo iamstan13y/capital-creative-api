@@ -5,6 +5,7 @@
         ICategoryRepository Category { get; }
         IProductRepository Product { get; }
         IProjectRepository Project { get; }
+        IContactRepository Contact { get; }
         void SaveChanges();
     }
 }
