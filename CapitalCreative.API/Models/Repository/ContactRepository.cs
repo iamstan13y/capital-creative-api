@@ -21,7 +21,7 @@ namespace CapitalCreative.API.Models.Repository
         public async new Task<Result<Contact>> AddAsync(Contact contact)
         {
             await _dbSet.AddAsync(contact);
-            await _context.SaveChangesAsync();
+             await _context.SaveChangesAsync();
             
             await _emailService.SendEmailAsync(new EmailRequest
             {
