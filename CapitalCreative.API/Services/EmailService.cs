@@ -19,7 +19,7 @@ namespace CapitalCreative.API.Services
             MailMessage emailMessage = new()
             {
                 Sender = new MailAddress(_configuration["EmailService:UserName"]!, _configuration["EmailService:DisplayName"]!),
-                From = new MailAddress(email.From!, email.Name),
+                From = new MailAddress(_configuration["EmailService:UserName"]!, email.Name),
                 IsBodyHtml = true,
                 Subject = email.Subject,
                 Body = email.Body,
