@@ -6,6 +6,7 @@
         IProductRepository Product { get; }
         IProjectRepository Project { get; }
         IContactRepository Contact { get; }
+        IQuoteRepository Quote { get; }
         void SaveChanges();
     }
 }
