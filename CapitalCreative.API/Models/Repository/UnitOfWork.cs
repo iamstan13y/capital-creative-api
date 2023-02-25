@@ -20,7 +20,7 @@ namespace CapitalCreative.API.Models.Repository
             Product = new ProductRepository(context);
             Project = new ProjectRepository(context);
             Contact = new ContactRepository(context, emailService, configuration);
-            Quote = new QuoteRepository(context);
+            Quote = new QuoteRepository(context, emailService, configuration);
             _context = context;
         }
 
