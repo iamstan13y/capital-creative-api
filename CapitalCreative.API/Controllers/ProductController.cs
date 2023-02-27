@@ -59,5 +59,16 @@ namespace CapitalCreative.API.Controllers
 
             return Ok(result);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _unitOfWork.Product.DeleteAsync(id);
+            if (!result.Success) return NotFound(result);
+
+            _unitOfWork.SaveChanges();
+            
+            return Ok(result);
+        }
     }
 }
