@@ -21,6 +21,7 @@ namespace CapitalCreative.API.Controllers
                 CategoryId = request.CategoryId,
                 Name = request.Name,
                 Description = request.Description,
+                ImageUrl = request.ImageUrl,
                 Price = request.Price
             });
 
@@ -50,6 +51,7 @@ namespace CapitalCreative.API.Controllers
                 Name = request.Name,
                 CategoryId = request.CategoryId,
                 Description = request.Description,
+                ImageUrl = request.ImageUrl,
                 Price = request.Price
             });
 
