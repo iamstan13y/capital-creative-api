@@ -1,7 +1,7 @@
 ﻿using CapitalCreative.API.Models.Local;
 using CapitalCreative.API.Services.IServices;
-using System.Net.Mail;
 using System.Net;
+using System.Net.Mail;
 
 namespace CapitalCreative.API.Services
 {
