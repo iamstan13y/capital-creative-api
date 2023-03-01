@@ -24,7 +24,7 @@ namespace CapitalCreative.API.Controllers
         {
             var result = await _unitOfWork.Quote.FindAsync(id);
             if (!result.Success) return NotFound(result);
-            
+
             return Ok(result);
 
         }
@@ -37,7 +37,7 @@ namespace CapitalCreative.API.Controllers
             {
                 appliances += $"{x}, ";
             });
-            
+
             var result = await _unitOfWork.Quote.AddAsync(new Quote
             {
                 Address = request.Address,
@@ -53,7 +53,7 @@ namespace CapitalCreative.API.Controllers
                 RoofType = request.RoofType,
                 SystemRequirements = request.SystemRequirements
             });
-            
+
             if (!result.Success) return BadRequest(result);
 
             return Ok(result);
