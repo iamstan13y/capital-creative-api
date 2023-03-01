@@ -10,7 +10,7 @@ namespace CapitalCreative.API.Models.Repository
         private readonly IEmailService _emailService;
         private readonly IConfiguration _configuration;
         private readonly AppDbContext _context;
-        
+
         public QuoteRepository(AppDbContext context, IEmailService emailService, IConfiguration configuration) : base(context)
         {
             _emailService = emailService;
