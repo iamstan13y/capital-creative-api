@@ -67,7 +67,7 @@ namespace CapitalCreative.API.Controllers
             if (!result.Success) return NotFound(result);
 
             _unitOfWork.SaveChanges();
-            
+
             return Ok(result);
         }
     }
