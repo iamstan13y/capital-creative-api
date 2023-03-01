@@ -27,7 +27,7 @@ namespace CapitalCreative.API.Models.Repository
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             if (product == null) return new Result<Product>(false, $"Product with id {id} not found.");
-            
+
             return new Result<Product>(product);
         }
     }
