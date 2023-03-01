@@ -43,7 +43,6 @@ namespace CapitalCreative.API.Controllers
             return Ok(result);
         }
 
-
         [HttpPut]
         public async Task<IActionResult> Update(UpdateProjectRequest request)
         {
@@ -57,6 +56,17 @@ namespace CapitalCreative.API.Controllers
                 DetailedDescription = request.DetailedDescription,
                 ImageUrl = request.ImageUrl
             });
+
+            _unitOfWork.SaveChanges();
+
+            return Ok(result);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _unitOfWork.Project.DeleteAsync(id);
+            if (!result.Success) return NotFound(result);
 
             _unitOfWork.SaveChanges();
 
